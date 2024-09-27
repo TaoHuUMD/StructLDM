@@ -1,0 +1,13 @@
+dataset:
+    img_H : 1024 #940 #512
+    img_W : 512 #720 #256
+    dataset_size: 700
+    dataset_path: ../data/fashion/RenderPeople/20230228
+    dataset_name: renderpeople
+    gender: neutral
+
+is_crop: True
+#camera_cond: True
+
+model:
+    renderer_spatial_output_dim: [512, 256]
