@@ -41,7 +41,7 @@ pip install -r requirements.txt
 
 ### Download Models & Assets & Datasets
 
-Download the [pre-trained models](https://1drv.ms/f/s!Att91f8pjJXNnBnujIUpx1l4uzss?e=9beDrT) and [assets](https://1drv.ms/f/s!Att91f8pjJXNnBBDe3pVC-vTbG_a?e=WDcxSS). Put them in *DATA_DIR/result/trained_model* and *DATA_DIR/asset* respectively. *DATA_DIR* is specified as *../data* in default.
+Download the [pre-trained models](https://1drv.ms/f/c/cd958c29ffd57ddb/El5pOpqXkAhBnet6VGfAX6IBUoBrd2lYg_4w1PcT_VyBJA?e=2oGs2W) and [assets](https://1drv.ms/f/s!Att91f8pjJXNnBBDe3pVC-vTbG_a?e=WDcxSS). Put them in *DATA_DIR/result/trained_model* and *DATA_DIR/asset* respectively. *DATA_DIR* is specified as *../data* in default.
  
 Register and download SMPL models [here](https://smpl.is.tue.mpg.de/). Put them in the folder *smpl_data*.
 
