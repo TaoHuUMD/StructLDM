@@ -34,14 +34,11 @@ conda install pytorch3d -c pytorch3d
 pip install -r requirements.txt
 ```
 
-
 ## Implementation 
-
-(under construction)
 
 ### Download Models & Assets & Datasets
 
-Download the [pre-trained models](https://1drv.ms/f/c/cd958c29ffd57ddb/El5pOpqXkAhBnet6VGfAX6IBUoBrd2lYg_4w1PcT_VyBJA?e=2oGs2W) and [assets](https://1drv.ms/f/s!Att91f8pjJXNnBBDe3pVC-vTbG_a?e=WDcxSS). Put them in *DATA_DIR/result/trained_model* and *DATA_DIR/asset* respectively. *DATA_DIR* is specified as *../data* in default.
+Download sample data, necessary assets, and pretrained models from [OneDrive](https://1drv.ms/f/c/cd958c29ffd57ddb/EhBoSdYizdVPkjyy85LDkM8BQzbRM1BFIlkrxtwwbH1_hA?e=LvZmCU). Put them in *DATA_DIR/result/trained_model* and *DATA_DIR/asset* respectively. *DATA_DIR* is specified as *./data* in default.
  
 Register and download SMPL models [here](https://smpl.is.tue.mpg.de/). Put them in the folder *smpl_data*.
 
@@ -50,21 +47,44 @@ The folder structure should look like
 ```
 DATA_DIR
 ├── dataset
+    ├──renderpeople/
 └── asset/
     ├── smpl_data/
         └── SMPL_NEUTRAL.pkl
-├── result/trained_model
+    ├── uv_sampler/
+    ├── uv_table.npy
+    ├── smpl_uv.obj
+    ├── smpl_template_sdf.npy
+    ├── sample_data.pkl
+├── result/
+    ├── trained_model/modelname/
+        └──decoder_xx, diffusion_xx
+        ├──samples/
+    ├── test_output
+
 ```
 
 ### Commands
 
-Inference script for trained models (e.g., RenderPeople).
+Generating 3D humans via (e.g., models trained on RenderPeople).
 ```bash
-bash scripts/renderpeople/test.sh gpu_ids
+bash scripts/renderpeople.sh gpu_ids
 ```
+The generation results will be found in *DATA_DIR/result/test_output*.
 
-The inference results will be found in *DATA_DIR/result/*.
+The training script of latent diffusion can be found in *struct_diffusion*.
+```bash
+bash struct_diffusion/scripts/exec.sh "train" gpu_ids
+```
+Trained models will be stored in *DATA_DIR/result/trained_model/modelname/diffusion_xx.pt*.
 
+Refer to the downloaded sample data at ./data/dataset/renderpeople to prepare your own dataset, and modify the corresponding path in the config file.
+
+The inference script of latent diffusion can be found in *struct_diffusion*.
+```bash
+bash struct_diffusion/scripts/test.sh gpu_ids
+```
+Samples will be stored in *DATA_DIR/result/trained_model/modelname/samples*. 
 
 ## License
 Distributed under the S-Lab License. See `LICENSE` for more information.
@@ -83,3 +103,6 @@ If you find our code or paper is useful to your research, please consider citing
       primaryClass={cs.CV}
   }
 ```
+
+## Acknowledgements
+The structured diffusion model is implemented on top of the [Latent-Diffusion](https://github.com/CompVis/latent-diffusion).

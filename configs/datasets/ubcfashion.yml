@@ -1,13 +1,12 @@
 dataset:
     img_H : 1024 #940 #512
     img_W : 512 #720 #256
-    dataset_size: 700
-    dataset_path: ./data/dataset/renderpeople
-    dataset_name: renderpeople
+    dataset_size: 800
+    dataset_path: /mnt/sfs-common/thu/project/human/data/fashion/UBCFasihon
+    dataset_name: ubcfashion
     gender: neutral
 
 is_crop: True
-#camera_cond: True
 
 model:
     renderer_spatial_output_dim: [512, 256]

@@ -1,0 +1,10 @@
+dataset:    
+    img_H : 1024 #512
+    img_W : 512 #256
+    dataset_size: 11000
+    dataset_path: ../data/fashion/DeepFashion
+    dataset_name: deepfashion
+    gender: neutral
+
+model:
+    renderer_spatial_output_dim: [512, 256]

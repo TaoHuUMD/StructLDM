@@ -1,0 +1,13 @@
+dataset:
+    img_H : 1024 #940 #512
+    img_W : 512 #720 #256
+    dataset_size: 526
+    dataset_path: /mnt/sfs-common/thu
+    dataset_name: thuman2
+    gender: neutral
+
+is_crop: False
+#camera_cond: True
+
+model:
+    renderer_spatial_output_dim: [512, 512]
