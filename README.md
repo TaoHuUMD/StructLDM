@@ -14,7 +14,7 @@
 </div>
 
 ## Introduction
-We propose StructLDM, a structured latent diffusion model that learns 3D human generations from 2D images.
+We propose StructLDM, a structured latent diffusion model that learns 3D human generations from 2D images. 
 
 <img src='docs/figs/teaser.jpg'>
 
