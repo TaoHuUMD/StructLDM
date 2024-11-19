@@ -16,7 +16,6 @@ from .losses import normal_kl, discretized_gaussian_log_likelihood
 
 import sys
 sys.path.append("..")
-from Engine.th_utils.dirs import tmp_save
 
 from pdb import set_trace as st
 
