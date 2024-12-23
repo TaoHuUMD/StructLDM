@@ -316,7 +316,7 @@ class BaseOptions():
 
         self.parser.add_argument('--log_dir', type=str, default='../data/result/nr/trained_model', help='add nr time latents.')
         
-        self.parser.add_argument('--project_directory', type=str, default='StructLDMGit.struct_decoder', help='add nr time latents.')
+        self.parser.add_argument('--project_directory', type=str, default='struct_decoder', help='add nr time latents.')
 
         self.parser.add_argument('--model_module', type=str, default='model_eva', help='add nr time latents.')
 
